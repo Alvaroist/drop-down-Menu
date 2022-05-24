@@ -84,8 +84,7 @@ function menuSelector(event){
     }
 }
 
-function subMenuSelector(subevent){
-    console.log(subevent);
+const subMenuSelector=subevent=> {
     if(spreadSubMenu==true && subevent.target.textContent=="sublog1"){
         spreadMenu(subevent.target.textContent);
     }
@@ -94,8 +93,18 @@ function subMenuSelector(subevent){
     }
 }
 
-function spreadMenu(menu){
-    if(menu=="blog"){
+/*function subMenuSelector(subevent){
+    console.log(subevent);
+    if(spreadSubMenu==true && subevent.target.textContent=="sublog1"){
+        spreadMenu(subevent.target.textContent);
+    }
+    else{
+        removeMenu(idSubMenu);
+    }
+}*/
+
+function spreadMenu(menu) {
+    if (menu == "blog") {
         subblog1 = document.createElement("div");
         subtitle1b = document.createTextNode("sublog1");
         subblog1.appendChild(subtitle1b);
@@ -111,10 +120,10 @@ function spreadMenu(menu){
         subblog3.appendChild(subtitle3b);
         blog.appendChild(subblog3);
         spreadmenu = true;
-        idMenu=menu;
+        idMenu = menu;
     }
-    
-    if(menu=="services"){
+
+    if (menu == "services") {
         subservice1 = document.createElement("div");
         subtitle1s = document.createTextNode("STUV");
         subservice1.appendChild(subtitle1s);
@@ -130,10 +139,10 @@ function spreadMenu(menu){
         subservice3.appendChild(subtitle3s);
         services.appendChild(subservice3);
         spreadmenu = true;
-        idMenu=menu;
+        idMenu = menu;
     }
-    
-    if(menu=="about"){
+
+    if (menu == "about") {
         subabout1 = document.createElement("div");
         subtitle1a = document.createTextNode("STUV");
         subabout1.appendChild(subtitle1a);
@@ -149,20 +158,20 @@ function spreadMenu(menu){
         subabout3.appendChild(subtitle3a);
         about.appendChild(subabout3);
         spreadmenu = true;
-        idMenu=menu;
+        idMenu = menu;
     }
-    if(menu=="sublog1"){
-        opblog1=document.createElement("li");
-        textblog1=document.createTextNode("opcion 1");
+    if (menu == "sublog1") {
+        opblog1 = document.createElement("li");
+        textblog1 = document.createTextNode("opcion 1");
         opblog1.appendChild(textblog1);
         subblog1.appendChild(opblog1);
 
-        opblog2=document.createElement("li");
-        textblog2=document.createTextNode("opcion 2");
+        opblog2 = document.createElement("li");
+        textblog2 = document.createTextNode("opcion 2");
         opblog2.appendChild(textblog2);
         subblog1.appendChild(opblog2);
-        spreadSubMenu=false;
-        idSubMenu=menu;
+        spreadSubMenu = false;
+        idSubMenu = menu;
     }
 }
 
